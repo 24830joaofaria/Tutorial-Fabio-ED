@@ -56,4 +56,31 @@ public class LinkedQueue<T>   implements QueueADT<T> {
     public int size() {
         return this.size;
     }
+
+    /**
+     * Returns a string representation of this queue.
+     * The string represents the elements from front to rear.
+     *
+     * @return a string representation of the queue
+     */
+    @Override
+    public String toString() {
+        if (isEmpty()) {
+            return "Queue is empty.";
+        }
+
+        StringBuilder result = new StringBuilder("Queue: ");
+        LinearNode<T> current = front;
+
+        // Iterate through the queue from front to rear
+        while (current != null) {
+            result.append(current.getElement());
+            current = current.getNext();
+            if (current != null) {
+                result.append(" <- ");
+            }
+        }
+
+        return result.toString();
+    }
 }
