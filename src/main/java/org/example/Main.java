@@ -9,20 +9,6 @@ import org.example.Interfaces.StackADT;
 public class Main {
     public static void main(String[] args) {
 
-//        StackADT<String> stack = new LinkedStack();
-//
-//        stack.push("A");
-//        System.out.println(stack.peek());
-//        stack.push("B");
-//        stack.push("C");
-//        stack.push("D");
-//        System.out.println(stack.toString());
-//        //alteracao
-//        stack.pop();
-//        System.out.println(stack.peek());
-        // PKFJASOFSJAPOFAa
-
-
         // Criação de uma pilha de inteiros
         StackADT<Integer> stack = new LinkedStack<>();
 
@@ -70,5 +56,49 @@ public class Main {
 
         largeStack.push(3); // Força expansão
         System.out.println("Stack after expansion: " + largeStack);  // Stack: 3, 2, 1
+
+        // Create a new queue of integers
+        QueueADT<Integer> queue = new LinkedQueue<>();
+
+        // Test if the queue is empty
+        System.out.println("Is queue empty? " + queue.isEmpty()); // Should print true
+
+        // Enqueue some elements
+        System.out.println("Enqueuing elements: 10, 20, 30, 40");
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.enqueue(40);
+
+        // Print the queue contents
+        System.out.println("Queue after enqueuing: " + queue);
+
+        // Peek at the first element
+        try {
+            System.out.println("First element: " + queue.first()); // Should print 10
+        } catch (EmptyCollectionException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Dequeue elements and print the queue state after each dequeue
+        try {
+            System.out.println("Dequeuing element: " + queue.dequeue()); // Should print 10
+            System.out.println("Queue after dequeue: " + queue);
+
+            System.out.println("Dequeuing element: " + queue.dequeue()); // Should print 20
+            System.out.println("Queue after dequeue: " + queue);
+
+            System.out.println("Dequeuing element: " + queue.dequeue()); // Should print 30
+            System.out.println("Queue after dequeue: " + queue);
+
+            System.out.println("Dequeuing element: " + queue.dequeue()); // Should print 40
+            System.out.println("Queue after dequeue: " + queue);
+
+        } catch (EmptyCollectionException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Check if the queue is empty after dequeuing all elements
+        System.out.println("Is queue empty? " + queue.isEmpty()); // Should print true
     }
 }
