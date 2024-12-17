@@ -57,6 +57,8 @@ public class Main {
         largeStack.push(3); // Força expansão
         System.out.println("Stack after expansion: " + largeStack);  // Stack: 3, 2, 1
 
+
+        System.out.println("\n\n\n\n\n");
         // Create a new queue of integers
         QueueADT<Integer> queue = new LinkedQueue<>();
 
