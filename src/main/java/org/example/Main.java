@@ -14,7 +14,7 @@ public class Main {
         stack.push("C");
         stack.push("D");
         System.out.println(stack.toString());
-
+        //alteracao
         stack.pop();
         System.out.println(stack.peek());
 
